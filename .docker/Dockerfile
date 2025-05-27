@@ -1,6 +1,6 @@
 FROM debian:11.6
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update \
     && apt install --yes ca-certificates apt-transport-https lsb-release wget curl \
@@ -9,6 +9,7 @@ RUN apt update \
     && apt update \
     && apt install --yes --no-install-recommends \
     apache2 \
+    unzip \
     php8.1 \
     php8.1-mysql \
     php8.1-ldap \
